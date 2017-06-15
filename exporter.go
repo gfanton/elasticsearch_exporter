@@ -468,7 +468,7 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		e.counters["indices_indexing_index_time_seconds_total"].WithLabelValues(allStats.ClusterName, stats.Host).Set(float64(stats.Indices.Indexing.IndexTime / 1000))
 		e.counters["indices_indexing_index_total"].WithLabelValues(allStats.ClusterName, stats.Host).Set(float64(stats.Indices.Indexing.IndexTotal))
 
-		e.counters["indices_indexing_delete_time_seconds_total"].WithLabelValues(allStats.ClusterName, stats.Host).Set(float64(stats.Indices.Indexing.DeleteTime / 1000))
+		// e.counters["indices_indexing_delete_time_seconds_total"].WithLabelValues(allStats.ClusterName, stats.Host).Set(float64(stats.Indices.Indexing.DeleteTime / 1000))
 		e.counters["indices_indexing_delete_total"].WithLabelValues(allStats.ClusterName, stats.Host).Set(float64(stats.Indices.Indexing.DeleteTotal))
 
 		e.counters["indices_merges_total_time_seconds_total"].WithLabelValues(allStats.ClusterName, stats.Host).Set(float64(stats.Indices.Merges.TotalTime / 1000))
